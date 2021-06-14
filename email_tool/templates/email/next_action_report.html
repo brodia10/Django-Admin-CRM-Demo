@@ -1,0 +1,21 @@
+{% extends "mail_templated/base.tpl" %}
+
+{% load static %}
+
+{% block subject %}
+REPORT: Next Action Item Report for {{ now }} - {{ seven_days_out }} is ready!
+{% endblock %}
+
+{% block html %}
+<h1 style="color: black;">Next Action Item Report: <span style="color: #205fcf">{{ now }} - {{ seven_days_out }}</span></h1>
+<h2 style="color: #808080;">{{ user }}, this report contains all employee Next Action Items past due <em>or</em> upcoming in the next 7 days.</h2>
+<h3 style="padding-bottom: 25px;">Sign in to <a href="https://oppdashboard.com">OppDashboard</a> to view more.</h3>
+
+{% for assignee, actions in assignees_and_actions %}
+    {% include 'email/_items/assignees_actions.html' with assignee=assignee actions=actions only %}
+{% endfor %}
+
+<footer>
+<p>Sent from Fidelis's <a href="https://oppdashboard.com">OppDashboard</a>.</p>
+</footer>
+{% endblock html %}

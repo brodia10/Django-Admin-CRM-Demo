@@ -1,0 +1,16 @@
+.vscode
+./vscode
+emailenv
+myenv
+venv
+.DS_STORE
+**/__pycache__/
+**/*.pyc
+**/*.sqlite3
+**/*.sqlite3-journal
+staticfiles
+media
+.env
+.pyc
+pyrightconfig.json
+credentials.json

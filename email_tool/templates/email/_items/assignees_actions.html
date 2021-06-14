@@ -1,0 +1,68 @@
+{% load static %}
+
+{% block html %}
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+* {
+  font-family: sans-serif;
+}
+
+table {
+  border-collapse: collapse;
+  width: 1200px;
+  table-layout: fixed;
+}
+
+td, th, tr {
+  border: 1px solid #dddddd;
+  border-radius: 12px;
+  text-align: left;
+  padding: 8px;
+  min-width: 50px;
+  max-width: 50px;
+  word-wrap:break-word;
+}
+
+td {
+    color: black;
+}
+
+th {
+    background-color: white;
+    color: #205fcf;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+</style>
+</head>
+    <body style="padding-bottom: 75px;">
+        <h2 style="color: #205fcf;">{{ assignee }}'s Next Action Items</h2>
+        <table>
+            <tr>
+                <th scope="col">Status</th>
+                <th scope="col">Company</th>
+                <th scope="col">Customer Name</th>
+                <th scope="col">Role</th>
+                <th style="width: 195px !important;" scope="col">Email</th>
+                <th style="width: 185px !important;" scope="col">Next Action Item</th>
+                <th scope="col">Target Date</th>
+            </tr>
+            {% for action in actions %}
+                <tr>
+                    <td><strong>{{ action.status }}</strong></td>
+                    <td>{{ action.customer.company }}</td>
+                    <td>{{ action.customer.first_name }} {{ action.customer.last_name}}</td>
+                    <td>{{ action.customer.role }}</td>
+                    <td style="width: 195px !important;">{{ action.customer.email }}</td>
+                    <td style="width: 185px !important;">{{ action.customer.next_action_item }}</td>
+                    <td>{{ action.target_date }}</td>
+                </tr>
+        </table>
+        {% endfor %}
+    </body>
+</html>
+{% endblock html %}

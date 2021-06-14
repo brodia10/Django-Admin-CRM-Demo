@@ -1,0 +1,26 @@
+name: Pull Request Validation
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+    branches: [master]
+
+jobs:
+  run_tests:
+    name: Web App Checks
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Set up Python 3.7
+        uses: actions/setup-python@v2
+        with:
+          python-version: "3.7.x"
+          architecture: "x64"
+      - name: Install Dependencies
+        run: pip install -r requirements.txt
+      - name: Run Black Code Formatting
+        run: black --config pyproject.toml -v --check .
+      - name: Run Flake8 Linter
+        run: flake8 -v .
