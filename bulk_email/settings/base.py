@@ -166,9 +166,9 @@ JAZZMIN_SETTINGS = {
     # (defaults to current_admin_site.site_header if absent or None)
     "site_header": "Welcome to Django Admin CRM",
     # square logo to use for your site, must be present in static files, used for favicon and brand on top left
-    "site_logo": "",
+    "site_logo": "mail.png",
     # Welcome text on the login screen
-    "welcome_sign": "An easy-to-use and powerful CRM for your business. username: testUser | password: letsgivethisatry!",
+    "welcome_sign": "Username: testUser  Password: letsgivethisatry!",
     # Copyright on the footer
     "copyright": "Brook Rodia and Mike Varga",
     # The model admin to search from the search bar, search bar omitted if excluded
