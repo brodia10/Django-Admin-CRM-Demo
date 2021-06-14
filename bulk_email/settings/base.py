@@ -161,14 +161,14 @@ CKEDITOR_CONFIGS = {
 # Django-Jazzmin Admin Theme Configs #
 JAZZMIN_SETTINGS = {
     # title of the window (Will default to current_admin_site.site_title if absent or None)
-    "site_title": "Welcome to Django Admin CRM",
+    "site_title": "Django Admin CRM",
     # Title on the brand, and login screen (19 chars max)
     # (defaults to current_admin_site.site_header if absent or None)
-    "site_header": "",
+    "site_header": "Welcome to Django Admin CRM",
     # square logo to use for your site, must be present in static files, used for favicon and brand on top left
-    "site_logo": "fidelis-logo_DdDHVdk.png",
+    "site_logo": "",
     # Welcome text on the login screen
-    "welcome_sign": "An easy-to-use and powerful CRM for your business.",
+    "welcome_sign": "An easy-to-use and powerful CRM for your business. username: testUser | password: letsgivethisatry!",
     # Copyright on the footer
     "copyright": "Brook Rodia and Mike Varga",
     # The model admin to search from the search bar, search bar omitted if excluded
